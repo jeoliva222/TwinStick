@@ -1,4 +1,3 @@
-
 import game.views.MainMenu;
 
 public class GameRunner {
