@@ -1,6 +1,6 @@
 package engine;
 
-import engine.Time;
+import engine.time.Time;
 import game.Game;
 
 // Display and Input imports from lwjgl
@@ -80,7 +80,9 @@ public class Main {
             }
             
             Time.update();
-            // Game engine works in 3 parts: 1) get player input 2) update all entities 3) render all entities
+            // Game engine works in 3 parts: 1) get player input 
+            //                               2) update all entities 
+            //                               3) render all entities
             {
             	getInput();
             	update();
