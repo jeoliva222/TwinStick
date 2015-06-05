@@ -15,7 +15,7 @@ public class Game {
 		entities = new ArrayList<AbstractEntity>();
 		removedEntities = new ArrayList<AbstractEntity>();
 		
-		entities.add(new AbstractEntity(100, 100, 30, 30, 0.5f, 0.5f, 1f));
+		entities.add(new Player());
 		
 	}
 	
