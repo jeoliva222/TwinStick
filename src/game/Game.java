@@ -16,11 +16,14 @@ public class Game {
 		removedEntities = new ArrayList<AbstractEntity>();
 		
 		entities.add(new Player());
-		
 	}
 	
 	public void getInput() {
-		
+		for (AbstractEntity p : entities) {
+			if (p instanceof Player) {
+				((Player) p).getInput();
+			}
+		}
 	}
 	
 	public void update() {
