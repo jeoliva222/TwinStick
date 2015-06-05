@@ -38,7 +38,7 @@ public class AbstractEntity {
 	
 	
 	public void update() {
-		
+		personalMove();
 	}
 	
 	public void render() {
@@ -62,6 +62,11 @@ public class AbstractEntity {
 	 */
 	public void end() {
 		exists = false;
+	}
+	
+	public void personalMove() {
+		x += dx;
+		y += dy;
 	}
 	
 	public float getX() {
