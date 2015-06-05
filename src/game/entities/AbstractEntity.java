@@ -3,7 +3,7 @@ package game.entities;
 import game.views.Sprite;
 import static org.lwjgl.opengl.GL11.*;
 
-public class AbstractEntity {
+public abstract class AbstractEntity {
 	
 	protected boolean exists;	// true at object creation, false when deleted from game, use end() function to delete
 	
