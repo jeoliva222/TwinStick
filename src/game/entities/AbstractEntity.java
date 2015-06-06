@@ -2,11 +2,12 @@ package game.entities;
 
 import game.views.Sprite;
 import static org.lwjgl.opengl.GL11.*;
-import static engine.Main.game;
+import engine.direction.Direction;
 
 public abstract class AbstractEntity {
 	
 	protected boolean exists;	// true at object creation, false when deleted from game, use end() function to delete
+	protected int type;
 	
 	protected float x;		
 	protected float y;
@@ -15,6 +16,10 @@ public abstract class AbstractEntity {
 	
 	protected float dx;
 	protected float dy;
+	
+	protected Direction direction;
+	protected float speed = 0;
+	protected float maxSpeed;
 	
 	protected Sprite spr;
 	
@@ -29,11 +34,14 @@ public abstract class AbstractEntity {
 	 */
 	public AbstractEntity(float x, float y, float sx, float sy, float r, float g, float b) {
 		this.exists = true;
+		this.type = 1;
 		
 		this.x = x;
 		this.y = y;
 		
 		this.spr = new Sprite(sx, sy, r, g, b);
+		this.direction = new Direction(this);
+		this.maxSpeed = 1;
 	}
 	
 	
@@ -66,8 +74,15 @@ public abstract class AbstractEntity {
 	}
 	
 	public void personalMove() {
-		x += dx;
-		y += dy;
+		direction.refreshXY();
+		
+		if (direction.isNull()) {
+			speed = 0;
+			direction.resetXY();
+		} else {
+			x += maxSpeed * direction.getX();
+			y += maxSpeed * direction.getY();
+		}
 	}
 	
 	public float getX() {

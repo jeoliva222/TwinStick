@@ -14,25 +14,27 @@ public class Player extends AbstractEntity {
 
 	public Player() {
 		super(400, 300, 30, 30, 0.1f, 0.3f, 0.1f);
+		type = 0;
 		this.health = 3;
 		this.currentWep = new Pistol(this);
+		
+		direction.setToCardinal();
 	}
-
+	
 	public void getInput() {
-		dx = 0;
-		dy = 0;
+		direction.resetXY();
 		
 		if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
-			dy = 1;
+			direction.addUpCardinal();
 		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
-			dy = -1;
+			direction.addDownCardinal();
 		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
-			dx = -1;
+			direction.addLeftCardinal();
 		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
-			dx = 1;
+			direction.addRightCardinal();
 		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
 			currentWep.fire();
