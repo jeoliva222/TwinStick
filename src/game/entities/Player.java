@@ -1,6 +1,8 @@
 package game.entities;
 
 import game.entities.Weapons.AbstractWeapon;
+import game.entities.Weapons.Pistol;
+
 import org.lwjgl.input.Keyboard;
 //import org.lwjgl.input.Mouse;
 
@@ -12,6 +14,8 @@ public class Player extends AbstractEntity {
 
 	public Player() {
 		super(400, 300, 30, 30, 0.1f, 0.3f, 0.1f);
+		this.health = 3;
+		this.currentWep = new Pistol(this);
 	}
 
 	public void getInput() {
@@ -29,6 +33,9 @@ public class Player extends AbstractEntity {
 		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
 			dx = 1;
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
+			currentWep.fire();
 		}
 	}
 	

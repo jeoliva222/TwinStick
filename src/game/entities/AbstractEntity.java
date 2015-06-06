@@ -2,6 +2,7 @@ package game.entities;
 
 import game.views.Sprite;
 import static org.lwjgl.opengl.GL11.*;
+import static engine.Main.game;
 
 public abstract class AbstractEntity {
 	

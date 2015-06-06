@@ -1,6 +1,7 @@
 package game.entities.Enemies;
 
 import game.entities.AbstractEntity;
+import game.entities.Player;
 
 public abstract class AbstractEnemy extends AbstractEntity {
 	

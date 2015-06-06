@@ -2,16 +2,19 @@ package game;
 
 import static org.lwjgl.opengl.GL11.*;
 import game.entities.*;
+import game.entities.Projectiles.AbstractProjectile;
+
 import java.util.ArrayList;
 
 public class Game {
-	
+	private ArrayList<AbstractEntity> addedEntities;
 	private ArrayList<AbstractEntity> entities;
 	private ArrayList<AbstractEntity> removedEntities;
 	
 	public Game() {
 		System.out.println("Welcome to TwinStick");
 		
+		addedEntities = new ArrayList<AbstractEntity>();
 		entities = new ArrayList<AbstractEntity>();
 		removedEntities = new ArrayList<AbstractEntity>();
 		
@@ -35,6 +38,10 @@ public class Game {
 	            entities.remove(i);
 	        }
 	    }
+		for (int i = 0; i < addedEntities.size(); i++) {
+			entities.add(addedEntities.get(i));
+			addedEntities.remove(i);
+		}
 		for (int i = 0; i < removedEntities.size(); i++) {
 			removedEntities.remove(i);
 		}
@@ -76,6 +83,13 @@ public class Game {
 	 */
 	public void drawBox(float x, float y, float sx, float sy) {
 		drawBox(x, y, sx, sy, 1, 1, 1);
+	}
+	
+	/**
+	 * @param ent -- Entity to be added to game
+	 */
+	public void addEntity(AbstractEntity ent) {
+		addedEntities.add(ent);
 	}
 	
 }
