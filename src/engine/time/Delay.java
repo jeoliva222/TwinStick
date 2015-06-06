@@ -27,7 +27,7 @@ public class Delay {
     
     public boolean isOver() {
         if (!started) {
-            return false;
+            return true;
         }
         return (Time.getTime() >= endTime);
     }

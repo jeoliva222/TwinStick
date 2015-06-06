@@ -36,7 +36,7 @@ public class Player extends AbstractEntity {
 		if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
 			direction.addRightCardinal();
 		}
-		if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
+		if (Keyboard.isKeyDown(Keyboard.KEY_L) && currentWep.getShotDelay().isOver()) {
 			currentWep.fire();
 		}
 	}
