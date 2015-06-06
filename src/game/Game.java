@@ -2,7 +2,6 @@ package game;
 
 import static org.lwjgl.opengl.GL11.*;
 import game.entities.*;
-import game.entities.Projectiles.AbstractProjectile;
 
 import java.util.ArrayList;
 
