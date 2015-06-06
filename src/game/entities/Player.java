@@ -34,7 +34,7 @@ public class Player extends AbstractEntity {
 		if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
 			dx = 1;
 		}
-		if (Keyboard.isKeyDown(Keyboard.KEY_Q)) {
+		if (Keyboard.isKeyDown(Keyboard.KEY_L) && currentWep.getShotDelay().isOver()) {
 			currentWep.fire();
 		}
 	}
