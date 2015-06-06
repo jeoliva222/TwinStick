@@ -15,7 +15,7 @@ public class Time {
         currentTime = getTime();
     }
     
-    private static long getTime() {
+    public static long getTime() {
         return System.nanoTime();
     }
     

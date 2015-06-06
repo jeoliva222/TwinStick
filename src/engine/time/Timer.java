@@ -5,7 +5,7 @@ public class Timer {
 	private boolean started;
 	
 	public Timer() {
-		
+		started = false;
 	}
 	
 	/**

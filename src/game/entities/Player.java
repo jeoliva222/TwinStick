@@ -18,7 +18,7 @@ public class Player extends AbstractEntity {
 		dx = 0;
 		dy = 0;
 		
-		if (Keyboard.isKeyDown(Keyboard.KEY_W)){
+		if (Keyboard.isKeyDown(Keyboard.KEY_W)) {
 			dy = 1;
 		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
